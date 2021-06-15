@@ -33,4 +33,9 @@ feature "Books", type: :feature do
     expect(page).to have_content('Title / Description')
   end
 
+  scenario 'should have label - Select Author' do
+    visit(root_path)
+    expect(page).to have_content('Select Author')
+  end
+
 end
