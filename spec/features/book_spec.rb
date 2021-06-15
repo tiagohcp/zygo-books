@@ -23,9 +23,14 @@ feature "Books", type: :feature do
     expect(page).to have_content(book2.title)
   end
 
-  scenario 'should have label - Filters'do
+  scenario 'should have label - Filters' do
     visit(root_path)
     expect(page).to have_content('Filters')
+  end
+
+  scenario 'should have label - Title / Description' do
+    visit(root_path)
+    expect(page).to have_content('Title / Description')
   end
 
 end
