@@ -1,7 +1,7 @@
 ActiveAdmin.register_page "Dashboard" do
-  menu priority: 1, label: proc { I18n.t("active_admin.dashboard") }
+  menu priority: 1, label: proc { I18n.t("active_admin.books") }
 
-  content title: proc { I18n.t("active_admin.dashboard") } do
+  content title: proc { I18n.t("active_admin.books") } do
     div class: "blank_slate_container", id: "dashboard_default_message" do
       span class: "blank_slate" do
         span I18n.t("active_admin.dashboard_welcome.welcome")
@@ -9,7 +9,7 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
-    # Here is an example of a simple dashboard with columns and panels.
+    # Here is an example of a simple books with columns and panels.
     #
     # columns do
     #   column do
