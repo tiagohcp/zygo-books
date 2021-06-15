@@ -1,11 +1,22 @@
 <h1>Wellcome to ZygoBooks!!!</h1>
 
 <h1>Filters</h1>
+<%= search_form_for @q, url: books_index_path do |f| %>
+  <%= f.label :title_or_description_cont, 'Title / Description' %>
+  <%= f.search_field :title_or_description_cont %>
+  <%= f.submit %>
+<% end %>
 
 <% @books.each do |book| %>
   <ul>
     <li><%= book.title %></li>
     <li><%= book.description %></li>
     <li><%= book.author %></li>
+    <% if book.image? %>
+      <li>
+        <img src=<%= url_for(book.image) %> width="100" height="120">
+      </li>
+    <% end %>
+
   </ul>
 <% end %>
