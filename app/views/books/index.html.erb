@@ -1,13 +1,6 @@
 <h1>Wellcome to ZygoBooks!!!</h1>
 
-<h1>Filters</h1>
-<%= search_form_for @q, url: books_index_path do |f| %>
-  <%= f.label :title_or_description_cont, 'Title / Description' %>
-  <%= f.search_field :title_or_description_cont %>
-  <%= f.label :author %>
-  <%= f.select :author_eq, Book.all.pluck(:author).uniq.map { |x| [x, x] }, {include_blank: true}  %>
-  <%= f.submit %>
-<% end %>
+<%= render partial: "books/filters" %>
 
 <% @books.each do |book| %>
   <ul>
