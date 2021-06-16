@@ -8,7 +8,7 @@
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 if Book.count.zero?
-  10.times do
+  50.times do
     b = Book.create(
       title: Faker::Book.title,
       description: Faker::Lorem.sentence(word_count: 3, supplemental: false, random_words_to_add: 7),
