@@ -1,6 +1,6 @@
 ActiveAdmin.register Book do
 
-  filter :title_or_description_cont, label: 'Title / Description'
+  filter :title_or_description_cont
   filter :author
 
   permit_params :title,

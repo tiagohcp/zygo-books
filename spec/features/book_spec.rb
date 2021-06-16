@@ -30,27 +30,27 @@ feature "Books", type: :feature do
 
   scenario 'should have label - Title / Description' do
     visit(root_path)
-    expect(page).to have_content('Title / Description')
+    expect(page).to have_content(I18n.t('books.labels.title_or_description_cont'))
   end
 
   scenario 'should have label - Author' do
     visit(root_path)
-    expect(page).to have_content('Author')
+    expect(page).to have_content(I18n.t('books.labels.author_eq'))
   end
 
   scenario 'should have button to filter' do
     visit(root_path)
-    expect(page).to have_button('Filter')
+    expect(page).to have_button(I18n.t('books.labels.filter'))
   end
 
   scenario 'should have link to clear filters' do
     visit(root_path)
-    expect(page).to have_link('Clear')
+    expect(page).to have_link(I18n.t('books.labels.clear'))
   end
 
   scenario 'should have link to order filters' do
     visit(root_path)
-    expect(page).to have_link('Order by Title')
+    expect(page).to have_link(I18n.t('books.labels.order'))
   end
 
 end

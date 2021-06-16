@@ -6,23 +6,23 @@
   <%= search_form_for @q, url: books_index_path do |f| %>
     <div class="card-body has-icons-left has-icons-right">
       <div>
-        <label class="label is-small">Title / Description</label>
+        <label class="label is-small"><%=I18n.t('books.labels.title_or_description_cont')%></label>
         <div class="control">
           <%= f.search_field :title_or_description_cont, class: 'form-control' %>
         </div>
       </div>
       <div style="padding-top: 10px">
-        <label class="label is-small">Author</label>
+        <label class="label is-small"><%=I18n.t('books.labels.author_eq')%></label>
         <div class="control">
           <%= f.select :author_eq, Book.all.pluck(:author).uniq.map { |x| [x, x] }, {include_blank: true}, class: 'form-control' %>
         </div>
       </div>
       <div class="control filter-buttons">
         <div class="control bottom">
-          <%= f.submit 'Filter', class: 'btn btn-filter my-2' %>
+          <%= f.submit I18n.t('books.labels.filter'), class: 'btn btn-filter my-2' %>
         </div>
         <div class="control bottom" style="padding-top: 8px">
-          <%= link_to "Clear Search", request.path, class:'cancel-filter' %>
+          <%= link_to I18n.t('books.labels.clear'), request.path, class:'cancel-filter' %>
         </div>
       </div>
     </div>

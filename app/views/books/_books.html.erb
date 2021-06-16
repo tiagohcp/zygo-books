@@ -13,7 +13,7 @@
 <!--    </div>-->
 
     <div class ="order-books">
-      <%= sort_link(@q, :title, 'Order by Title', default_order: :desc) %>
+      <%= sort_link(@q, :title, I18n.t('books.labels.order'), default_order: :desc) %>
     </div>
 
     <div class="cards">

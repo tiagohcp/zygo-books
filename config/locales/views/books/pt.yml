@@ -1,0 +1,12 @@
+pt: &pt
+    books:
+        labels:
+            title: 'Título'
+            author: 'Autor'
+            description: 'Descrição'
+            image: 'Imagem'
+            title_or_description_cont: 'Título / Descrição'
+            author_eq: 'Autor'
+            filter: 'Filtrar'
+            clear: 'Limpar'
+            order: 'Ordernar por Título'

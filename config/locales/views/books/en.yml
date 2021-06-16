@@ -1,0 +1,14 @@
+en: &en
+    books:
+        labels:
+            title: 'Title'
+            author: 'Author'
+            description: 'Description'
+            image: 'Image'
+            title_or_description_cont: 'Title / Description'
+            author_eq: 'Author'
+            filter: 'Filter'
+            clear: 'Clear'
+            order: 'Order by Title'
+en-US:
+    <<: *en

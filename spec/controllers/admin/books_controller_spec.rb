@@ -37,7 +37,7 @@ describe Admin::BooksController, type: :controller do
     let(:filters_sidebar) { page.find('#filters_sidebar_section') }
     it "filter Name exists" do
       get :index
-      expect(filters_sidebar).to have_css('label[for="q_title_or_description_cont"]', text: 'Title')
+      expect(filters_sidebar).to have_css('label[for="q_title_or_description_cont"]', text: I18n.t('books.labels.title'))
       expect(filters_sidebar).to have_css('input[name="q[title_or_description_cont]"]')
     end
     it "filter Name works" do
@@ -62,9 +62,9 @@ describe Admin::BooksController, type: :controller do
     end
     it "should render the form elements" do
       get :new
-      expect(page).to have_field('Title')
-      expect(page).to have_field('Description')
-      expect(page).to have_field('Author')
+      expect(page).to have_field(I18n.t('books.labels.title'))
+      expect(page).to have_field(I18n.t('books.labels.description'))
+      expect(page).to have_field(I18n.t('books.labels.author'))
     end
   end
 
@@ -128,9 +128,9 @@ describe Admin::BooksController, type: :controller do
       expect(assigns(:book)).to eq(book)
     end
     it "should render the form elements" do
-      expect(page).to have_field('Title', with: book.title)
-      expect(page).to have_field('Description', with: book.description)
-      expect(page).to have_field('Author', with: book.author)
+      expect(page).to have_field(I18n.t('books.labels.title'), with: book.title)
+      expect(page).to have_field(I18n.t('books.labels.description'), with: book.description)
+      expect(page).to have_field(I18n.t('books.labels.author'), with: book.author)
     end
   end
 
