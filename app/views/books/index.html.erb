@@ -1,6 +1,8 @@
 <h1>Wellcome to ZygoBooks!!!</h1>
 
-<%= render partial: "books/filters" %>
+<div class="filters-card">
+  <%= render partial: "books/filters" %>
+</div>
 
 <% @books.each do |book| %>
   <ul>
