@@ -14,28 +14,34 @@
     Filters
   </div>
   <%= search_form_for @q, url: books_index_path do |f| %>
-    <div class="card-body has-icons-left has-icons-right" style="display: flex; justify-content:space-between;">
+    <div class="card-body has-icons-left has-icons-right" style="display: grid; justify-content:center;">
       <div>
         <label class="label is-small">Title / Description</label>
         <div class="control">
           <%= f.search_field :title_or_description_cont, class: 'form-control' %>
         </div>
       </div>
-      <div>
+      <div style="padding-top: 10px">
         <label class="label is-small">Author</label>
         <div class="control">
           <%= f.select :author_eq, Book.all.pluck(:author).uniq.map { |x| [x, x] }, {include_blank: true}, class: 'form-control' %>
         </div>
       </div>
-      <div class="control filter-buttons">
-        <div class="control">
+      <div class="control filter-buttons-mobile">
+        <div class="control bottom">
           <%= f.submit 'Filter', class: 'btn btn-filter my-2' %>
         </div>
-        <div class="control">
+        <div class="control bottom" style="padding-top: 8px">
           <%= link_to "Clear Search", request.path, class:'cancel-filter' %>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="card-footer">
+    2 days ago
+  </div>
+
   <% end %>
 
 </div>

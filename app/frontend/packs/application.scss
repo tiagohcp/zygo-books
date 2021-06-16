@@ -21,6 +21,11 @@ h1 {
   display: grid;
   justify-items: center;
 }
+.filter-buttons-mobile {
+  display: flex;
+  justify-content:space-around;
+  padding-top: 10px;
+}
 
 .btn-filter {
   color: #F7F7F7 !important;
