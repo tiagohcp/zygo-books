@@ -1,17 +1,6 @@
 
 <section id="testmonials" class="testmonials-section">
   <div class="container" style="border: solid 1px #00b1cd;">
-
-<!--    <div class="row">-->
-<!--      <div class ="col-md-2">-->
-<!--      </div>-->
-<!--      <div class ="order-books col-md-8">-->
-        <%#= sort_link(@q, :title, 'Order by Title', default_order: :desc) %>
-<!--      </div>-->
-<!--      <div class ="col-md-2">-->
-<!--      </div>-->
-<!--    </div>-->
-
     <div class ="order-books">
       <%= sort_link(@q, :title, I18n.t('books.labels.order'), default_order: :desc) %>
     </div>
@@ -19,18 +8,5 @@
     <div class="cards">
       <%= render partial: "books/book_card", collection: books, as: :book %>
     </div>
-
-<!--    <div class="cards">-->
-<!--      <div class="row books-card">-->
-<!--        <div class ="col-md-2">-->
-<!--        </div>-->
-<!--        <div class ="col-md-8">-->
-          <%#= render partial: "books/book_card", collection: books, as: :book %>
-<!--        </div>-->
-<!--        <div class ="col-md-2">-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-
   </div>
 </section>

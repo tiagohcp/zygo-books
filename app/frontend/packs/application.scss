@@ -31,7 +31,7 @@ a:hover, a:active {
 }
 
 @media (max-width: 650px) {
-  .card-body {
+  .filters.card-body {
     display: grid;
     justify-content:center;
   }
@@ -78,14 +78,29 @@ a:hover, a:active {
   margin: 20px;
 }
 
-//.order-books > a:link, a:visited {
-//  background-color: #00b1cd !important;
-//  color: white;
-//  padding: 14px 25px;
-//  text-align: center;
-//  text-decoration: none;
-//  display: inline-block;
-//  border-radius: 200px;
+.testmonials {
+  margin: 15px;
+}
+
+.book-card {
+  border-color: #00b1cd !important;
+  margin-bottom: 15px;
+  //justify-content: space-around;
+}
+
+.book-card-label {
+  font-size: large;
+  font-weight: bolder;
+}
+
+.book-card-content {
+  font-size: medium;
+  font-weight: normal;
+}
+
+//.card-col {
+//  display: grid;
+//  justify-content:start;
 //}
 
 // Import Bootstrap v5
