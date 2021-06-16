@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature "Books", type: :feature do
 
-  let!(:book) { Fabricate(:book) }
-  let!(:book2) { Fabricate(:book) }
+  let!(:book1) { Fabricate(:book, title: 'First Book', description: 'First Description', author: 'Abcd') }
+  let!(:book2) { Fabricate(:book, title: 'Second Book', description: 'Second Description', author: 'Qwert') }
 
   scenario 'show message - Wellcome' do
     visit(root_path)
@@ -12,14 +12,14 @@ feature "Books", type: :feature do
 
   scenario 'should render a book' do
     visit(root_path)
-    expect(page).to have_content(book.title)
-    expect(page).to have_content(book.description)
-    expect(page).to have_content(book.author)
+    expect(page).to have_content(book1.title)
+    expect(page).to have_content(book1.description)
+    expect(page).to have_content(book1.author)
   end
   
   scenario 'should render all books' do
     visit(root_path)
-    expect(page).to have_content(book.title)
+    expect(page).to have_content(book1.title)
     expect(page).to have_content(book2.title)
   end
 
@@ -33,9 +33,24 @@ feature "Books", type: :feature do
     expect(page).to have_content('Title / Description')
   end
 
-  scenario 'should have label - Select Author' do
+  scenario 'should have label - Author' do
     visit(root_path)
-    expect(page).to have_content('Select Author')
+    expect(page).to have_content('Author')
+  end
+
+  scenario 'should have button to filter' do
+    visit(root_path)
+    expect(page).to have_button('Filter')
+  end
+
+  scenario 'should have link to clear filters' do
+    visit(root_path)
+    expect(page).to have_link('Clear')
+  end
+
+  scenario 'should have link to order filters' do
+    visit(root_path)
+    expect(page).to have_link('Order by Title')
   end
 
 end

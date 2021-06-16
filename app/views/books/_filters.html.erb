@@ -7,13 +7,13 @@
       <div>
         <label class="label is-small">Title / Description</label>
         <div class="control">
-          <%= f.search_field :title_or_description_cont, class: 'form-control' %>
+          <%= f.search_field :title_or_description_cont, class: 'form-control', name: 'title_or_description_cont' %>
         </div>
       </div>
       <div>
         <label class="label is-small">Author</label>
         <div class="control">
-          <%= f.select :author_eq, Book.all.pluck(:author).uniq.map { |x| [x, x] }, {include_blank: true}, class: 'form-control' %>
+          <%= f.select :author_eq, Book.all.pluck(:author).uniq.map { |x| [x, x] }, {include_blank: true}, class: 'form-control', name: 'author_eq' %>
         </div>
       </div>
       <div class="control filter-buttons">
@@ -21,7 +21,7 @@
           <%= f.submit 'Filter', class: 'btn btn-filter my-2' %>
         </div>
         <div class="control">
-          <%= link_to "Clear Search", request.path, class:'cancel-filter' %>
+          <%= link_to "Clear", request.path, class:'cancel-filter' %>
         </div>
       </div>
     </div>

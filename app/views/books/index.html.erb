@@ -10,6 +10,10 @@
   </div>
 </div>
 
+<div class="order-books">
+  <%= sort_link(@q, :title, 'Order by Title', default_order: :desc) %>
+</div>
+
 <% @books.each do |book| %>
   <ul>
     <li><%= book.title %></li>
