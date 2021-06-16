@@ -7,13 +7,13 @@
       <div>
         <label class="label is-small">Title / Description</label>
         <div class="control">
-          <%= f.search_field :title_or_description_cont, class: 'form-control', name: 'title_or_description_cont' %>
+          <%= f.search_field :title_or_description_cont, class: 'form-control' %>
         </div>
       </div>
       <div>
         <label class="label is-small">Author</label>
         <div class="control">
-          <%= f.select :author_eq, Book.all.pluck(:author).uniq.map { |x| [x, x] }, {include_blank: true}, class: 'form-control', name: 'author_eq' %>
+          <%= f.select :author_eq, Book.all.pluck(:author).uniq.map { |x| [x, x] }, {include_blank: true}, class: 'form-control' %>
         </div>
       </div>
       <div class="control filter-buttons">

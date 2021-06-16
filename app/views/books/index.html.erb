@@ -10,20 +10,4 @@
   </div>
 </div>
 
-<div class="order-books">
-  <%= sort_link(@q, :title, 'Order by Title', default_order: :desc) %>
-</div>
-
-<% @books.each do |book| %>
-  <ul>
-    <li><%= book.title %></li>
-    <li><%= book.description %></li>
-    <li><%= book.author %></li>
-    <% if book.image? %>
-      <li>
-        <img src=<%= url_for(book.image) %> width="100" height="120">
-      </li>
-    <% end %>
-
-  </ul>
-<% end %>
+<%= render partial: "books/books", locals: { books: @books} %>
