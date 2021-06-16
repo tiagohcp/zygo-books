@@ -1,20 +1,10 @@
-<!--<h1>Filters</h1>-->
-<%#= search_form_for @q, url: books_index_path do |f| %>
-  <%#= f.label :title_or_description_cont, 'Title / Description' %>
-  <%#= f.search_field :title_or_description_cont %>
-  <%#= f.label :author %>
-  <%#= f.select :author_eq, Book.all.pluck(:author).uniq.map { |x| [x, x] }, {include_blank: true}  %>
-  <%#= f.submit %>
-<%# end %>
-
-<!--<div class="filters">-->
 <div class="card filters">
-<!--  <h2 class="title is-size-5" style='display:inline-block'>Filters</h2>-->
+
   <div class="card-header text-center">
     Filters
   </div>
   <%= search_form_for @q, url: books_index_path do |f| %>
-    <div class="card-body has-icons-left has-icons-right" style="display: grid; justify-content:center;">
+    <div class="card-body has-icons-left has-icons-right">
       <div>
         <label class="label is-small">Title / Description</label>
         <div class="control">
@@ -27,7 +17,7 @@
           <%= f.select :author_eq, Book.all.pluck(:author).uniq.map { |x| [x, x] }, {include_blank: true}, class: 'form-control' %>
         </div>
       </div>
-      <div class="control filter-buttons-mobile">
+      <div class="control filter-buttons">
         <div class="control bottom">
           <%= f.submit 'Filter', class: 'btn btn-filter my-2' %>
         </div>
@@ -36,10 +26,6 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="card-footer">
-    2 days ago
   </div>
 
   <% end %>

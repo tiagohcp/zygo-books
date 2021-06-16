@@ -2,9 +2,31 @@ h1 {
   text-decoration: underline;
 }
 
+@media (max-width: 650px) {
+  .card-body {
+    display: grid;
+    justify-content:center;
+  }
+  .filter-buttons {
+    display: flex;
+    justify-content:space-around;
+    padding-top: 10px;
+  }
+}
+@media (min-width: 650px) {
+  .card-body {
+    display: flex;
+    justify-content:space-between;
+  }
+  .filter-buttons {
+    display: grid;
+    justify-items: center;
+  }
+  }
 .filters {
   justify-items: center;
   max-width: 720px;
+  min-width: 555px;
   margin: 25px;
   padding: 10px;
 }
@@ -15,16 +37,6 @@ h1 {
   font-weight: bold;
   color: #F7F7F7;
   background-color: #00b1cd !important;
-}
-
-.filter-buttons {
-  display: grid;
-  justify-items: center;
-}
-.filter-buttons-mobile {
-  display: flex;
-  justify-content:space-around;
-  padding-top: 10px;
 }
 
 .btn-filter {
