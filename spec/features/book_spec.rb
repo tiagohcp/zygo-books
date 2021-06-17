@@ -33,9 +33,31 @@ feature "Books", type: :feature do
     expect(page).to have_content(I18n.t('books.labels.title_or_description_cont'))
   end
 
+  scenario 'should filter by Title / Description' do
+    visit(root_path)
+
+    fill_in 'q[title_or_description_cont]', with: 'First'
+    click_button('commit')
+    1.second
+    expect(page).to have_content(book1.title)
+    expect(page).not_to have_content(book2.title)
+
+  end
+
   scenario 'should have label - Author' do
     visit(root_path)
     expect(page).to have_content(I18n.t('books.labels.author_eq'))
+  end
+
+  scenario 'should filter by Author' do
+    visit(root_path)
+
+    select "Qwert", :from => "q[author_eq]"
+    click_button('commit')
+    1.second
+    expect(page).not_to have_content(book1.title)
+    expect(page).to have_content(book2.title)
+
   end
 
   scenario 'should have button to filter' do
@@ -48,7 +70,23 @@ feature "Books", type: :feature do
     expect(page).to have_link(I18n.t('books.labels.clear'))
   end
 
-  scenario 'should have link to order filters' do
+  scenario 'should clear filters' do
+    visit(root_path)
+
+    select "Qwert", :from => "q[author_eq]"
+    click_button('commit')
+    1.second
+    expect(page).not_to have_content(book1.title)
+    expect(page).to have_content(book2.title)
+
+    find('a.cancel-filter').click
+    1.second
+    expect(page).to have_content(book1.title)
+    expect(page).to have_content(book2.title)
+
+  end
+
+  scenario 'should have link to order books' do
     visit(root_path)
     expect(page).to have_link(I18n.t('books.labels.order'))
   end
