@@ -41,10 +41,16 @@ rails db:migrate
 rails db:seed
 ```
 
-3. Inicie o rails
+3. Inicie o servidor rails
 
 ```
 rails s
+```
+
+4. Rodar os testes
+
+```
+bin/rspec
 ```
 
 # Ambiente Admin
