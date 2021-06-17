@@ -1,6 +1,6 @@
 
-<section id="testmonials" class="testmonials-section">
-  <div class="container" style="border: solid 1px #00b1cd; padding-bottom: 15px">
+<section id="books" class="books-section">
+  <div class="container book-container">
     <div class ="order-books">
       <%= sort_link(@q, :title, I18n.t('books.labels.order'), default_order: :desc) %>
     </div>
@@ -8,13 +8,10 @@
       <div class="cards">
         <%= render partial: "books/book_card", collection: books, as: :book %>
       </div>
-      <div class ="col-md-2">
-      </div>
-      <div class ="col-md-8">
+      <div class="row">
         <%= will_paginate @books, container: :true %>
       </div>
-      <div class ="col-md-2">
-      </div>
+
     </div>
   </div>
 </section>

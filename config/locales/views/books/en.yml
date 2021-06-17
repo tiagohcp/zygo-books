@@ -1,5 +1,7 @@
 en: &en
     books:
+        app: 'ZygoBooks'
+        app_by: 'ZygoBooks by @tiagohcp'
         labels:
             title: 'Title'
             author: 'Author'

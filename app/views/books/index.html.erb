@@ -1,4 +1,4 @@
-<h1>Wellcome to ZygoBooks!!!</h1>
+<%= render partial: "layouts/header" %>
 
 <div class="row filters-card">
   <div class ="col-md-2">
@@ -11,3 +11,5 @@
 </div>
 
 <%= render partial: "books/books", locals: { books: @books} %>
+
+<%= render partial: "layouts/footer" %>

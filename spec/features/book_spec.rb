@@ -5,9 +5,9 @@ feature "Books", type: :feature do
   let!(:book1) { Fabricate(:book, title: 'First Book', description: 'First Description', author: 'Abcd') }
   let!(:book2) { Fabricate(:book, title: 'Second Book', description: 'Second Description', author: 'Qwert') }
 
-  scenario 'show message - Wellcome' do
+  scenario 'show message - ZygoBooks' do
     visit(root_path)
-    expect(page).to have_content('Wellcome')
+    expect(page).to have_content(I18n.t('books.app'))
   end
 
   scenario 'should render a book' do
